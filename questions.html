@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Women’s Circle — Guiding Questions</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-image: url('https://res.cloudinary.com/diapyc6q1/image/upload/v1755847183/pexels-pixabay-68507_kiagjm.jpg');
+      --overlay: linear-gradient(180deg, rgba(255,187,200,0.50) 0%, rgba(255,215,235,0.45) 30%, rgba(255,245,250,0.40) 100%);
+      --card: rgba(255,255,255,0.88);
+      --text: #222222;
+      --muted: #5e5e5e;
+      --accent: #e66aa5;
+      --accent-2: #f2a8c2;
+      --shadow: 0 10px 30px rgba(0,0,0,0.12);
+      --radius: 22px;
+      --maxw: 860px;
+    }
+
+    /* Page background */
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      color: var(--text);
+      background:
+        var(--overlay),
+        var(--bg-image) center/cover no-repeat fixed;
+      display: grid;
+      place-items: center;
+      padding: clamp(16px, 3vw, 32px);
+    }
+
+    .wrap {
+      width: min(100%, var(--maxw));
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(18px, 3.5vw, 36px);
+      border: 1px solid rgba(255,255,255,0.7);
+    }
+
+    header h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: clamp(26px, 4.2vw, 40px);
+      line-height: 1.15;
+      margin: 0 0 8px 0;
+      letter-spacing: 0.2px;
+    }
+
+    header p {
+      margin: 0 0 18px 0;
+      color: var(--muted);
+      font-size: clamp(14px, 2.3vw, 16px);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .3px;
+      margin: 0 0 14px 0;
+    }
+
+    ol {
+      counter-reset: q;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: clamp(12px, 2.2vw, 16px);
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 16px;
+      padding: clamp(12px, 2.5vw, 18px);
+    }
+
+    .num {
+      counter-increment: q;
+      inline-size: 36px;
+      block-size: 36px;
+      border-radius: 50%;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: var(--accent);
+      border: 2px solid rgba(230,106,165,0.25);
+      box-shadow: 0 4px 10px rgba(230,106,165,0.12);
+      flex-shrink: 0;
+    }
+    .num::before {
+      content: counter(q);
+    }
+
+    .q {
+      font-size: clamp(15px, 2.6vw, 18px);
+      line-height: 1.5;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: clamp(13px, 2.2vw, 14px);
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: clamp(18px, 3vw, 28px);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { color: #1a1a1a; }
+    }
+    /* ===== Seasons / Phases prettified ===== */
+.phases {
+  margin: clamp(10px, 3vw, 24px) 0 clamp(18px, 4vw, 32px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.phases h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: clamp(22px, 3.6vw, 34px);
+  letter-spacing: .2px;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.phases p.lead {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 0 16px;
+  font-size: clamp(14px, 2.2vw, 16px);
+}
+
+.phase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(10px, 2.5vw, 16px);
+}
+
+@media (min-width: 640px) {
+  .phase-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.phase-card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
+  align-items: center;
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 18px;
+  padding: clamp(12px, 2.5vw, 18px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+.phase-icon {
+  inline-size: 56px; block-size: 56px;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  font-size: 26px; font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #e66aa5 0%, #f2a8c2 100%);
+}
+
+.phase-card[data-tone="winter"] .phase-icon {
+  background: linear-gradient(135deg,#6fb7ff,#a6d6ff);
+}
+.phase-card[data-tone="spring"] .phase-icon {
+  background: linear-gradient(135deg,#6bd28f,#b8f0c6);
+}
+.phase-card[data-tone="summer"] .phase-icon {
+  background: linear-gradient(135deg,#ffb057,#ffd08b);
+}
+.phase-card[data-tone="autumn"] .phase-icon {
+  background: linear-gradient(135deg,#c97136,#f0b07b);
+}
+
+.phase-title {
+  font-weight: 800;
+  font-size: clamp(15px, 2.6vw, 18px);
+  margin: 0 0 4px;
+}
+
+.phase-text {
+  color: var(--muted);
+  font-size: clamp(13px, 2.2vw, 14px);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.phases .note {
+  text-align: center;
+  margin-top: clamp(12px, 2.4vw, 16px);
+  color: var(--muted);
+  font-size: clamp(13px, 2.2vw, 14px);
+}
+.offer {
+  margin-top: 32px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  text-align: center;
+  font-size: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+.offer h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.offer a {
+  font-weight: 600;
+  color: #d77ca7;
+  text-decoration: none;
+}
+.offer a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<section class="phases">
+  <h2>The 4 Phases of the Cycle — like Seasons</h2>
+  <p class="lead">Your cycle is a rhythm. Think of it as the seasons of nature.</p>
+
+  <div class="phase-grid">
+    <div class="phase-card" data-tone="winter">
+      <div class="phase-icon">❄️</div>
+      <div>
+        <p class="phase-title">Menstrual — Winter</p>
+        <p class="phase-text">Rest & release. Slow down, warm drinks, quiet time. Listen inward.</p>
+      </div>
+    </div>
+
+    <div class="phase-card" data-tone="spring">
+      <div class="phase-icon">🌱</div>
+      <div>
+        <p class="phase-title">Follicular — Spring</p>
+        <p class="phase-text">Energy rises. Plan, try new things, move your body. Fresh motivation.</p>
+      </div>
+    </div>
+
+    <div class="phase-card" data-tone="summer">
+      <div class="phase-icon">☀️</div>
+      <div>
+        <p class="phase-title">Ovulation — Summer</p>
+        <p class="phase-text">Peak glow. Connect, express, schedule key chats. Share your ideas.</p>
+      </div>
+    </div>
+
+    <div class="phase-card" data-tone="autumn">
+      <div class="phase-icon">🍂</div>
+      <div>
+        <p class="phase-title">Luteal — Autumn</p>
+        <p class="phase-text">Turn inward. Finish tasks, organize, soften. Gentle self-care.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">Each phase has a gift. Flow with it, not against it.</p>
+</section>
+<body>
+  <main class="wrap" aria-label="Guiding questions for the workshop">
+    <div class="card" role="region" aria-labelledby="title">
+      <span class="pill">Women’s Circle · Living in Flow</span>
+      <header>
+        <h1 id="title">Guiding Questions for Today</h1>
+        <p>Read along on your phone. There’s nothing to fill in here — just presence, honesty, and gentle curiosity.</p>
+      </header>
+
+      <ol>
+        <li>
+          <div class="num" aria-hidden="true"></div>
+          <div>
+            <div class="q">How do you usually feel in your body and energy throughout the month?</div>
+            <div class="hint">Physically / emotionally — notice patterns, highs, lows, and anything in between.</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="num" aria-hidden="true"></div>
+          <div>
+            <div class="q">Have you noticed changes in your mood, creativity, or productivity across different phases?</div>
+            <div class="hint">At work, at home, in relationships — what shifts, and when?</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="num" aria-hidden="true"></div>
+          <div>
+            <div class="q">What’s the biggest challenge when your energy is low or your body asks you to slow down?</div>
+            <div class="hint">Where do you feel pressure to push through? What makes it hard to honor your pace?</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="num" aria-hidden="true"></div>
+          <div>
+            <div class="q">Do you have rituals or routines that help you feel balanced in each phase?</div>
+            <div class="hint">Small things count: journaling, movement, food, rest, boundaries, self-talk…</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="num" aria-hidden="true"></div>
+          <div>
+            <div class="q">How do you listen to your intuition — and is it easy or difficult to trust your body’s signals?</div>
+            <div class="hint">What does a clear “yes” or “no” feel like for you? How do you respond?</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="num" aria-hidden="true"></div>
+          <div>
+            <div class="q">If you could change one thing in how women are supported (work/home/society) during their cycle, what would it be?</div>
+            <div class="hint">Imagine policies, conversations, or community practices that would truly help.</div>
+          </div>
+        </li>
+      </ol>
+
+      <footer>
+        <section class="offer">
+  <h3>✨ Go Deeper With Your Own Design</h3>
+  <p>
+    Your cycle is unique. If you’d love to explore how your Human Design connects with your rhythm,  
+    I’ve created a special resource and offer personalized sessions.  
+  </p>
+  <p>
+    💌 Learn more here:  
+    <a href="https://naturellement-soi.vercel.app/page-en/index-en.html" target="_blank">
+      Naturellement Soi
+    </a>
+  </p>
+</section>
+        <span class="badge">💗 Safe space · confidentiality · no judgment</span>
+        <span>Facilitated by Morgane · Women’s Circle</span>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
